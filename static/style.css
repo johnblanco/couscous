@@ -1,0 +1,49 @@
+main > .container {
+  padding: 60px 15px 0;
+  min-height: 750px;
+}
+
+.footer {
+  background-color: #f5f5f5;
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+code {
+  font-size: 80%;
+}
+
+.login{
+    padding: 0 70px;
+}
+
+.bordered{
+    border-right: 1px solid #ccc;
+}
+
+.login-container{
+    margin-top: 50px;
+}
+
+.green{
+    color: green;
+}
+
+.red{
+    color: red;
+}
+
+.extra-padding{
+    padding-top: 20px;
+}
+
+.extra-margin{
+    margin-top: 20px;
+}
+
+.bottom-padding{
+    padding-bottom: 50px;
+}

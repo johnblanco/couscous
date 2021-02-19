@@ -1,0 +1,5 @@
+pip3 install flask_charts
+pip3 install flask-login
+pip3 install passlib
+pip3 install xlrd
+pip3 install mockito

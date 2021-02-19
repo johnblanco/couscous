@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    {% from "_formhelpers.html" import render_field %}
+    <div>
+        <h1>Bienvenidoa</h1>
+        <p>Investor Sim es un juego en el que podrás
+            experimentar como es operar en la bolsa.
+            Comenzas con <strong>U$S 20.000</strong> y tenés 3 años para comprar
+            y vender diferentes acciones. </p>
+        <p>Vas a poder saltear los dias
+            y las semanas para ver rápidamente
+            como tu capital ficticio crece (o no).</p>
+    </div>
+    <div class="row login-container">
+        <div class="col login bordered">
+            <h3>Iniciar sesión</h3>
+            <form method="post" action="/login">
+                {{ render_field(login_form.username) }}
+                {{ render_field(login_form.password) }}
+
+                <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+
+                {% if "wrong_password" in get_flashed_messages() %}
+                <div class="alert alert-danger extra-margin" role="alert">
+                    Usuario y/o contraseña incorrectos
+                </div>
+                {% endif %}
+
+            </form>
+        </div>
+        <div class="col login">
+            <h3>Registrarme</h3>
+            <form method="post" action="/register">
+                {{ render_field(register_form.username) }}
+                {{ render_field(register_form.password) }}
+                {{ render_field(register_form.repeat_password) }}
+                <button type="submit" class="btn btn-primary">Registrarme</button>
+
+                {% if "username_not_available" in get_flashed_messages() %}
+                <div class="alert alert-danger extra-margin" role="alert">
+                    El usuario no está disponible
+                </div>
+                {% endif %}
+
+                {% if "password_error" in get_flashed_messages() %}
+                <div class="alert alert-danger extra-margin" role="alert">
+                    Las contraseñas deben coincidir
+                </div>
+                {% endif %}
+            </form>
+
+        </div>
+    </div>
+
+</div>
+{% endblock %}
