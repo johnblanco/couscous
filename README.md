@@ -1,4 +1,4 @@
-# couscous-finanzas
+# couscous
 
 Una poderosa forma de administrar tus gastos.
 
